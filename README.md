@@ -14,6 +14,8 @@ https://github.com/kyzhouhzau/2019SpringTextM.git \# conlleval.pl脚本、pat/To
 
 https://github.com/bionlp-hzau/Tutorial_4_CRF \# 参考文档
 
+其他: numpy包(python3)
+
 ## 2 流程
 ```{sh}
 # 项目目录
@@ -40,4 +42,12 @@ done
 
 ### 2.2 使用wapiti软件进行训练和预测
 
-
+```{bash}
+# training
+for f in $(ls OUT_TAB_DIR); do 
+	if [ -f data/AGAC_training/${f%.*}.json ] && [ ! -f data/AGAC_sample/${f%.*}.json ]; then echo ${f%.*}.tab; fi; 
+done > training_list.txt
+# sample
+for f in $(ls OUT_TAB_DIR); do
+	if [ -f data/AGAC_sample/${f%.*}.json ]; then echo ${f%.*}.tab; fi; 
+done > sample_list.txt
