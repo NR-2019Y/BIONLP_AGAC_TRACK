@@ -10,6 +10,15 @@ http://pubannotation.org/projects/AGAC_sample/annotations.tgz   \# 解压后的5
 
 ## 2 流程
 
+项目目录
+.
+├── data
+│   ├── AGAC_sample
+│   └── AGAC_training
+├── OUT_TAB_DIR
+├── SAMPLE_TAB
+└── TRAIN_TAB
+
 ### 2.1 数据检查和预处理
 
 对原始的 AGAC_training 和 AGAC_sample 中的 json 文件进行检查和预处理
