@@ -120,7 +120,7 @@ perl conlleval.pl -d $'\t' < LabelOriSampleByOriTrainModel-sgd-l1.tab
 ```
 详细的训练，预测结果见Result.md(使用json2tab.py)和Result2.md（使用json2tab_2.py）
 
-### 3 结果整理成新的json文件
+## 3 结果整理成新的json文件
 
 使用json2tab_2.py提取的tab文件，"wapiti train -a sgd-l1"的预测结果（tab2/LabelOriSampleByOriTrainModel-sgd-l1.tab，第5列是新预测的结果，将该列的结果写入新的json文件即可）。
 ```{bash}
@@ -133,8 +133,10 @@ done
 ```
 结果保存在RESULT目录（49个json文件）。
 
-### 4 将来可改进的地方
+## 4 将来可改进的地方
 
 （1）修改断句方式，例如本例中最初以'.'来划分句子，“sequences”的数目会偏少，所以json2tab_2.py还新增其他标点如","来划分句子。
 
 （2）目前尚未对pattern文件的格式进行细致的研究，直接使用的 https://github.com/kyzhouhzau/2019SpringTextM.git 里面的pattern文件。此外在由json文件产生tab文件的过程中，未能正常处理部分基因名，未能正确处理denotations中有重叠的注释。这些都有待改进。
+
+## 附件 Result.md Result2.md
