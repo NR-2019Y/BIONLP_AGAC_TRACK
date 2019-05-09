@@ -98,6 +98,11 @@ gawk -F$"\t" '{if(/^$/) {print $0;} else {printf "%s\t%s\t%s\t%s\n", $1, $2, "O"
 cat $(tail -50 training_list.txt  | sed 's#^#TRAIN_TAB/#') | 
 gawk -F$"\t" '{if(/^$/) {print $0;} else {printf "%s\t%s\t%s\t%s\n", $1, $2, "O", $3} }' > Data2.tab
 
+gawk -F$"\t" '{if(/^$/) {print $0;} 
+else {printf "%s\t%s\t%s\t%s\n", $1, $2, "O", $3} }' TRAIN_TAB/*.tab > OriTrain.tab
+gawk -F$"\t" '{if(/^$/) {print $0;} 
+else {printf "%s\t%s\t%s\t%s\n", $1, $2, "O", $3} }' SAMPLE_TAB/*.tab > OriSample.tab
+
 # 训练（示例: 注意调整-a后面的参数）
 wapiti train -a sgd-l1 -t 4 -p patFile OriTrain.tab ModelByOriTrain-sgd-l1.mod
 wapiti label -c -m ModelByOriTrain-sgd-l1.mod OriSample.tab LabelOriSampleByOriTrainModel-sgd-l1.tab
