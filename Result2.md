@@ -3,13 +3,13 @@
 ```{bash}
 # json2tab_2.py运行报错信息与json2tab.py的是一致的
 for F in data/AGAC_training/*.json; do FJ=${F##*/}; FJ=OUT_TAB_DIR2/${FJ%.*}.tab; python3 json2tab_2.py $F $FJ; done
-# training
+# training 用于训练
 for f in $(ls OUT_TAB_DIR2); do 
 	if [ -f data/AGAC_training/${f%.*}.json ] && [ ! -f data/AGAC_sample/${f%.*}.json ]; 
     then echo ${f%.*}.tab;
   fi; 
 done > training_list2.txt
-# sample
+# sample 用于预测
 for f in $(ls OUT_TAB_DIR2); do
 	if [ -f data/AGAC_sample/${f%.*}.json ]; then
     echo ${f%.*}.tab; 
