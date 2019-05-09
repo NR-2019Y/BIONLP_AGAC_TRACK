@@ -98,11 +98,18 @@ gawk -F$"\t" '{if(/^$/) {print $0;} else {printf "%s\t%s\t%s\t%s\n", $1, $2, "O"
 cat $(tail -50 training_list.txt  | sed 's#^#TRAIN_TAB/#') | 
 gawk -F$"\t" '{if(/^$/) {print $0;} else {printf "%s\t%s\t%s\t%s\n", $1, $2, "O", $3} }' > Data2.tab
 
-# 训练示例（注意调整-a后面的参数）
+# 训练（示例: 注意调整-a后面的参数）
 wapiti train -a sgd-l1 -t 4 -p patFile OriTrain.tab ModelByOriTrain-sgd-l1.mod
 wapiti label -c -m ModelByOriTrain-sgd-l1.mod OriSample.tab LabelOriSampleByOriTrainModel-sgd-l1.tab
 perl conlleval.pl -d $'\t' < LabelOriSampleByOriTrainModel-sgd-l1.tab
 
+# 预测
+wapiti train -a sgd-l1 -t 4 -p patFile OriTrain.tab ModelByOriTrain-sgd-l1.mod
+wapiti label -c -m ModelByOriTrain-sgd-l1.mod OriSample.tab LabelOriSampleByOriTrainModel-sgd-l1.tab
+perl conlleval.pl -d $'\t' < LabelOriSampleByOriTrainModel-sgd-l1.tab
 ```
+详细的训练，预测结果见Result.md
+
+### 3 结果整理成新的json文件
 
 
