@@ -1,0 +1,22 @@
+Early	PubMed-28659290.json:0:5	B-Disease
+-	PubMed-28659290.json:5:6	I-Disease
+onset	PubMed-28659290.json:6:11	I-Disease
+autoimmune	PubMed-28659290.json:12:22	I-Disease
+disease	PubMed-28659290.json:23:30	E-Disease
+due	PubMed-28659290.json:31:34	O
+to	PubMed-28659290.json:35:37	O
+a	PubMed-28659290.json:38:39	O
+heterozygous	PubMed-28659290.json:40:52	O
+loss	PubMed-28659290.json:53:57	B-NegReg
+-	PubMed-28659290.json:57:58	I-NegReg
+of	PubMed-28659290.json:58:60	I-NegReg
+-	PubMed-28659290.json:60:61	I-NegReg
+function	PubMed-28659290.json:61:69	E-NegReg
+mutation	PubMed-28659290.json:70:78	B-Var
+in	PubMed-28659290.json:79:81	O
+TNFAIP3	PubMed-28659290.json:82:89	B-Gene
+(	PubMed-28659290.json:90:91	O
+A20	PubMed-28659290.json:91:94	O
+)	PubMed-28659290.json:94:95	O
+.	PubMed-28659290.json:95:96	O
+
