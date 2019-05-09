@@ -1,5 +1,5 @@
-### 训练参数调整（使用json2tab.py提取的tab文件）
 （注：wapiti train -a bcd因运行时间过长，未进行测试，此外这部分测试相当于-i参数调到最大时的结果）
+### 训练参数调整（使用json2tab.py提取的tab文件）
 ```{bash}
 #（1）sgd-l1
 wapiti train -a sgd-l1 -t 4 -p patFile Data1.tab ModelByData1-sgd-l1.mod
