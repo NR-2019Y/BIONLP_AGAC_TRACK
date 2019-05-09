@@ -9,8 +9,8 @@ http://pubannotation.org/projects/AGAC_training/annotations.tgz \# 解压的250�
 http://pubannotation.org/projects/AGAC_sample/annotations.tgz   \# 解压后的50个\*.json文件后放到 data/AGAC_sample 目录
 
 ## 2 流程
-
-项目目录
+```{sh}
+# 项目目录
 .
 ├── data
 │   ├── AGAC_sample
@@ -18,6 +18,7 @@ http://pubannotation.org/projects/AGAC_sample/annotations.tgz   \# 解压后的5
 ├── OUT_TAB_DIR
 ├── SAMPLE_TAB
 └── TRAIN_TAB
+```
 
 ### 2.1 数据检查和预处理
 
