@@ -156,4 +156,3 @@ perl conlleval.pl -d $'\t' < LabelOriSampleByOriTrainModel-rprop-.tab
 #               Reg: precision:   0.00%; recall:   0.00%; FB1:   0.00  1
 #               Var: precision:  56.52%; recall:   7.43%; FB1:  13.13  23
 ```
-```
