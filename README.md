@@ -1,6 +1,6 @@
 # BIONLP_AGAC_TRACK
 
-AGAC track (Course Project)
+AGAC track (Course Project，task 1)
 
 ## 1 准备
 
