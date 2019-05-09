@@ -25,13 +25,14 @@ https://github.com/bionlp-hzau/Tutorial_4_CRF \# 参考文档
 │   └── AGAC_training
 ├── OUT_TAB_DIR
 ├── SAMPLE_TAB
-└── TRAIN_TAB
+├── TRAIN_TAB
+└── RESULT
 ```
 
 ### 2.1 数据检查和预处理
 
 对原始的 AGAC_training 和 AGAC_sample 中的 json 文件进行检查和预处理
-（注：data/AGAC_training 和 data/AGAC_sample 中同名的json文件的内容是基本一致的，（例外：PubMed-24632946.json，PubMed-26637668.json，PubMed-28890134.json），区别仅在与project字段，一个是AGAC_training，一个是AGAC_sample。不需要专门整理
+（注：data/AGAC_training 和 data/AGAC_sample 中同名的json文件的内容是基本一致的（例外：PubMed-24632946.json，PubMed-26637668.json，PubMed-28890134.json），区别仅在与project字段，一个是AGAC_training，一个是AGAC_sample。不需要专门整理
 data/AGAC_sample目录的数据。）
 ```{bash}
 # json2tab.py 可以换成 json2tab_2.py（详细流程见Result2.md），结果会更好，
@@ -117,4 +118,11 @@ perl conlleval.pl -d $'\t' < LabelOriSampleByOriTrainModel-sgd-l1.tab
 
 ### 3 结果整理成新的json文件
 
+使用json2tab_2.py提取的tab文件，"wapiti train -a sgd-l1"的预测结果（tab2/LabelOriSampleByOriTrainModel-sgd-l1.tab，第5列是新预测的结果，将该列的结果写入新的json文件即可）。
+```{bash}
+for f in $(grep -v '^$' tab2/LabelOriSampleByOriTrainModel-sgd-l1.tab | cut -f2 | cut -d: -f1 | uniq); do
+  grep -F $f tab2/LabelOriSampleByOriTrainModel-sgd-l1.tab > tmp/${f%.*}.pred
+done
 
+
+```
