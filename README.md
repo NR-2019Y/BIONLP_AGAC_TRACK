@@ -2,11 +2,17 @@
 
 AGAC track (Course Project)
 
-## 1 数据来源
+## 1 准备
 
 http://pubannotation.org/projects/AGAC_training/annotations.tgz \# 解压的250个\*.json文件后放到 data/AGAC_training 目录
 
 http://pubannotation.org/projects/AGAC_sample/annotations.tgz   \# 解压后的50个\*.json文件后放到 data/AGAC_sample 目录
+
+https://github.com/Jekub/Wapiti.git \# wapiti软件
+
+https://github.com/kyzhouhzau/2019SpringTextM.git \# conlleval.pl脚本、pat/Tok321dis.pat文件，放置于当前目录
+
+https://github.com/bionlp-hzau/Tutorial_4_CRF \# 参考文档
 
 ## 2 流程
 ```{sh}
@@ -30,5 +36,8 @@ for F in data/AGAC_training/*.json; do
   python3 json2tab.py $F $FJ; 
 done
 ```
+将在OUT_TAB_DIR目录生成245个\*.tab文件（处理部分\*.json文件会报错，因此不生产对应的\*.tab文件）。
+
+### 2.2 使用wapiti软件进行训练和预测
 
 
