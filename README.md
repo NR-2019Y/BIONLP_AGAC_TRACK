@@ -18,7 +18,7 @@ https://github.com/bionlp-hzau/Tutorial_4_CRF \# 参考文档
 
 ## 2 流程
 ```{sh}
-# 项目目录
+# 项目目录（部分目录请自行创建）
 .
 ├── data
 │   ├── AGAC_sample
