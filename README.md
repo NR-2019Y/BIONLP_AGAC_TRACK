@@ -123,6 +123,7 @@ perl conlleval.pl -d $'\t' < LabelOriSampleByOriTrainModel-sgd-l1.tab
 for f in $(grep -v '^$' tab2/LabelOriSampleByOriTrainModel-sgd-l1.tab | cut -f2 | cut -d: -f1 | uniq); do
   grep -F $f tab2/LabelOriSampleByOriTrainModel-sgd-l1.tab > tmp/${f%.*}.pred
 done
-
-
+for i in $(ls tmp); do
+  python3 gen_json.py data/AGAC_sample/${i%.pred}.json tmp/$i RESULT/${i%.pred}_NEW.json; 
+done
 ```
