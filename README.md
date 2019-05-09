@@ -12,7 +12,10 @@ http://pubannotation.org/projects/AGAC_sample/annotations.tgz   \# 解压后的5
 
 ### 2.1 数据检查和预处理
 ```{bash}
-for F in data/AGAC_training/*.json; do FJ=${F##*/}; FJ=OUT_TAB_DIR/${FJ%.*}.tab; python3 json2tab.py $F $FJ; done
+for F in data/AGAC_training/*.json; do
+  FJ=${F##*/}; FJ=OUT_TAB_DIR/${FJ%.*}.tab; 
+  python3 json2tab.py $F $FJ; 
+done
 ```
 
 
