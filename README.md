@@ -135,5 +135,6 @@ done
 
 ### 4 将来可改进的地方
 
-（1）修改断句方式，例如本例中如果以'.'来划分句子，“sequences”的数目会偏少，所以json2tab_2.py还新增其他标点如","来划分句子。
+（1）修改断句方式，例如本例中最初以'.'来划分句子，“sequences”的数目会偏少，所以json2tab_2.py还新增其他标点如","来划分句子。
+
 （2）目前尚未对pattern文件的格式进行细致的研究，直接使用的 https://github.com/kyzhouhzau/2019SpringTextM.git 里面的pattern文件。此外在由json文件产生tab文件的过程中，未能正常处理部分基因名，未能正确处理denotations中有重叠的注释。这些都有待改进。
