@@ -34,7 +34,7 @@ https://github.com/bionlp-hzau/Tutorial_4_CRF \# 参考文档
 （注：data/AGAC_training 和 data/AGAC_sample 中同名的json文件的内容是基本一致的，（例外：PubMed-24632946.json，PubMed-26637668.json，PubMed-28890134.json），区别仅在与project字段，一个是AGAC_training，一个是AGAC_sample。不需要专门整理
 data/AGAC_sample目录的数据。）
 ```{bash}
-# json2tab.py 可以换成 json2tab_2.py，结果会更好
+# json2tab.py 可以换成 json2tab_2.py（详细流程见Result2.md），结果会更好，
 for F in data/AGAC_training/*.json; do
   FJ=${F##*/}; FJ=OUT_TAB_DIR/${FJ%.*}.tab; 
   python3 json2tab.py $F $FJ; 
@@ -113,7 +113,7 @@ wapiti train -a sgd-l1 -t 4 -p patFile OriTrain.tab ModelByOriTrain-sgd-l1.mod
 wapiti label -c -m ModelByOriTrain-sgd-l1.mod OriSample.tab LabelOriSampleByOriTrainModel-sgd-l1.tab
 perl conlleval.pl -d $'\t' < LabelOriSampleByOriTrainModel-sgd-l1.tab
 ```
-详细的训练，预测结果见Result.md
+详细的训练，预测结果见Result.md(使用json2tab.py)和Result2.md（使用json2tab_2.py）
 
 ### 3 结果整理成新的json文件
 
